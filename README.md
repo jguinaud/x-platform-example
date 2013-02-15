@@ -63,4 +63,14 @@ If it complains about a missing WordPress-cal scheme then just create it from XC
 
 
 # Running the tests
+Plug in an Android phone (or for the patient, start an Android emulator).
+Run the login feature on Android phone:
+
+    calabash-android run android-source/2.2.7/bin/Dashboard-debug.apk -p android features/login.feature
+
+Now run the login feature on iPhone:
+
+    cucumber -p ios features/login.feature
+    
+Hopefully that works out well :)
 
