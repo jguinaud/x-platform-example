@@ -51,7 +51,7 @@ From the root directory containing `android-source`,
 Setup Calabash iOS
 
     cd 3.3.1
-    calabash-ios-setup
+    calabash-ios setup
 
 Just select the default target (WordPress).
 
