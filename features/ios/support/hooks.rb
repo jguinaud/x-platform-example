@@ -1,17 +1,19 @@
-class CallbackWorld
-  include Calabash::Cucumber::Operations
+if defined?(::Calabash)
+  class CallbackWorld
+    include ::Calabash::Cucumber::Operations
 
-  def on_launch
-    begin
-      wait_for_elements_exist(["alertView label text:'Update Available'"], :timeout => 5)
-      wait_for_animation
-      touch("view marked:'Dismiss'")
-    rescue
-      #May not appear so ignore timeout error
+    def on_launch
+      begin
+        wait_for_elements_exist(["alertView label text:'Update Available'"], :timeout => 5)
+        wait_for_animation
+        touch("view marked:'Dismiss'")
+      rescue
+        #May not appear so ignore timeout error
+      end
     end
   end
-end
 
-World do
-  CallbackWorld.new
+  World do
+    ::CallbackWorld.new
+  end
 end
