@@ -5,7 +5,7 @@ class WelcomePage < Calabash::ABase
   end
 
   def wordpress_blog
-    performAction "press", "Add blog hosted at WordPress.com"
+    touch("android.widget.Button marked:'Add blog hosted at WordPress.com'")
     page(WordPressComPage)
   end
 
@@ -14,9 +14,10 @@ class WelcomePage < Calabash::ABase
     begin
       r = performAction('assert_text', "GNU GENERAL PUBLIC LICENSE", false)
     rescue
-      performAction "press", "Accept"
+      touch("android.widget.Button marked:'Accept'")
     end
-    performAction "wait_for_text", "Start blogging"
+    wait_for_elements_exist(["* {text BEGINSWITH 'Start blogging'}"])
+
     self
   end
 

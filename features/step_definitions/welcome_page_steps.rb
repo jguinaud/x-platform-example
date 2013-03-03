@@ -44,10 +44,16 @@ When /^I add the WordPress\.com blog$/ do
 end
 
 Then /^I should be logged in$/ do
-  screenshot_and_raise(:label =>"Wasn't logged in") if @page.is_a?(WordPressComPage)
+  if @page.is_a?(WordPressComPage)
+
+    screenshot_embed
+
+    raise "Was not logged in!"
+  end
+
   @page.await
 
-  screenshot_embed
+
 end
 
 
