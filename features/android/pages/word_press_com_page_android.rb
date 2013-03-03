@@ -5,7 +5,7 @@ class WordPressComPage < Calabash::ABase
   end
 
   def await(opts={})
-    super
+
     wait_for_elements_exist([login_button_query])
   end
 
