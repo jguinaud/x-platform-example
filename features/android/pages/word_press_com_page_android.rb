@@ -1,12 +1,11 @@
 class WordPressComPage < Calabash::ABase
 
   def trait
-    login_button_query
+    "* id:'username'"
   end
 
   def await(opts={})
-
-    wait_for_elements_exist([login_button_query])
+    wait_for_elements_exist([trait])
   end
 
 
