@@ -16,6 +16,10 @@ module Calabash
       clazz.new(@world)
     end
 
+    def current_page?
+      element_exists(trait)
+    end
+
     def embed(*args)
       @world.embed(*args)
     end

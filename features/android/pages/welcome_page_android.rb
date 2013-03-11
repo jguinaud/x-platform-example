@@ -1,12 +1,12 @@
 class WelcomePage < Calabash::ABase
 
   def trait
-
+    "android.widget.Button marked:'Add blog hosted at WordPress.com'"
   end
 
   def wordpress_blog
-    touch("android.widget.Button marked:'Add blog hosted at WordPress.com'")
-    page(WordPressComPage)
+    touch(trait)
+    page(WordPressComPage).await
   end
 
   def await(opts={})

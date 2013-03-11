@@ -4,7 +4,7 @@ Given /^I'm on the New Post screen$/ do
 
   @page.go_to_posts
   @page = @page.go_to_new_article
-  @page.await
+
   screenshot_embed(:label => "New Post")
 end
 
@@ -14,7 +14,6 @@ When /^I post an article$/ do
   @article = POSTS[:new]
   @page = @page.publish_article(@article)
   screenshot_embed(:label => "Publish")
-  @page.await
 
 end
 

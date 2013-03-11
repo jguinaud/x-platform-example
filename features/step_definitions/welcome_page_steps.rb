@@ -6,7 +6,6 @@ Given /^I am about to login$/ do
   screenshot_embed(:label => "Login") unless @disable_screenshot
 
   @page = welcome.wordpress_blog
-  @page.await
 
 
 end
@@ -30,6 +29,7 @@ end
 
 ## Login and add blog ##
 
+#noinspection CucumberDuplicatedStep
 Given /^I am on the Welcome Screen$/ do
   @page = page(WelcomePage).await
 
@@ -38,7 +38,6 @@ end
 
 When /^I add the WordPress\.com blog$/ do
   @page = @page.wordpress_blog
-  @page.await
 
   @page = @page.login(USERS[:jonas])
 end
@@ -50,9 +49,6 @@ Then /^I should be logged in$/ do
 
     raise "Was not logged in!"
   end
-
-  @page.await
-
 
 end
 
@@ -84,7 +80,6 @@ end
 #  page(RecommendedPage).await(:timeout => 15)
 #end
 When /^the menu is visible$/ do
-  @page.await
   @page.show_menu
-  screenshot_embed(:label => "Menu")
+  screenshot_embed(:label => "Menu") unless @disable_screenshot
 end

@@ -2,16 +2,9 @@ require 'calabash-cucumber/ibase'
 
 class WordPressComPage < Calabash::IBase
 
-  def trait
-    "navigationItemView marked:'Sign In'"
+  def title
+    "Sign In"
   end
-
-  def await(opts={})
-    super
-    wait_for_animation
-    self
-  end
-
 
   def login(user)
      touch("view marked:'Username'")
@@ -24,16 +17,16 @@ class WordPressComPage < Calabash::IBase
      keyboard_enter_text user[:password]
      done
 
-     wait_for_elements_do_not_exist(["tableViewCell isHidden:0 activityIndicatorView"], :timeout => 120)
+     wait_for_elements_do_not_exist(["tableViewCell activityIndicatorView"],
+                                    :timeout => 120)
 
 
      if element_exists(invalid_login_query)
       self
      else
-      page(MainPage)
+      page(MainPage).await
      end
   end
-
 
   def assert_invalid_login_message
     check_element_exists(trait)

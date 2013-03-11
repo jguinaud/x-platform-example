@@ -6,19 +6,8 @@ class WelcomePage < Calabash::IBase
     "button marked:'Add WordPress.com Blog'"
   end
 
-
   def wordpress_blog
-
-    touch(trait)
-
-
-    page(WordPressComPage)
-  end
-
-  def await(opts={})
-    super
-    wait_for_animation
-    self
+    transition(:tap => trait, :page => WordPressComPage)
   end
 
 end

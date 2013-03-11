@@ -2,9 +2,8 @@ require 'calabash-cucumber/ibase'
 
 class NewArticlePage < Calabash::IBase
 
-  def await
-    wait_for_animation
-    check_element_exists("navigationItemView marked:'New Post'")
+  def title
+    'New Post'
   end
 
   def publish_article(article)
@@ -22,10 +21,8 @@ class NewArticlePage < Calabash::IBase
     touch("button marked:'Done'")
     wait_for_animation
 
-    touch("button marked:'Publish'")
-
-    page(MainPage)
-
+    transition(:tap => "button marked:'Publish'",
+               :page => MainPage)
   end
 
 

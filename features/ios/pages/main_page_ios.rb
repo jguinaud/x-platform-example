@@ -6,9 +6,8 @@ class MainPage < Calabash::IBase
     "button marked:'Toggle'"
   end
 
-  def await
-    super
-    wait_for_animation
+  def await(wait_opts={})
+    super(wait_opts)
     wait_for_elements_do_not_exist(["activityIndicatorView"], :timeout => 60)
     wait_for_animation
     self
@@ -33,7 +32,6 @@ class MainPage < Calabash::IBase
         toggle_menu
       else
         show_menu
-        wait_for_animation
         touch("view marked:'Posts'")
       end
 
@@ -45,10 +43,8 @@ class MainPage < Calabash::IBase
   def go_to_new_article
     go_to_posts
 
-    touch("button marked:'navbar add'")
-
-    page(NewArticlePage)
-
+    transition(:tap => "button marked:'navbar add'",
+               :page => NewArticlePage)
   end
 
 
@@ -72,7 +68,7 @@ class MainPage < Calabash::IBase
 
 
   def post_with_title(title)
-    "view:'PostTableViewCell' isHidden:0 label text:'#{title}'"
+    "view:'PostTableViewCell' label text:'#{title}'"
   end
 
   def check_post_with_title_exists(title)

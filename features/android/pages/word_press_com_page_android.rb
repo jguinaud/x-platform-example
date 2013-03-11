@@ -6,6 +6,7 @@ class WordPressComPage < Calabash::ABase
 
   def await(opts={})
     wait_for_elements_exist([trait])
+    self
   end
 
 
@@ -22,13 +23,17 @@ class WordPressComPage < Calabash::ABase
     wait_for(:timeout => 60, :timeout_message => "Timed out logging in") do
       current_dialogs = query("DialogTitle",:text)
 
-      current_dialogs.empty? or current_dialogs.include?("Error") or current_dialogs.include?("No network available")
+      empty_dialog = current_dialogs.empty?
+      error_dialog = current_dialogs.include?("Error")
+      no_network_dialog = current_dialogs.include?("No network available")
+
+      empty_dialog or error_dialog or no_network_dialog
     end
 
     main_page = page(MainPage)
 
-    if element_exists(main_page.trait)
-      main_page
+    if main_page.current_page?
+      main_page.await
     else
       self
     end
