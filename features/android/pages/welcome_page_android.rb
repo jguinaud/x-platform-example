@@ -1,3 +1,5 @@
+require 'calabash-android/abase'
+
 class WelcomePage < Calabash::ABase
 
   def trait

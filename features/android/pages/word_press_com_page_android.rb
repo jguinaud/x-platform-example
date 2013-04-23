@@ -1,3 +1,5 @@
+require 'calabash-android/abase'
+
 class WordPressComPage < Calabash::ABase
 
   def trait
@@ -29,6 +31,7 @@ class WordPressComPage < Calabash::ABase
 
       empty_dialog or error_dialog or no_network_dialog
     end
+    sleep(1) # chance to transition
 
     main_page = page(MainPage)
 

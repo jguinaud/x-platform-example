@@ -18,6 +18,9 @@ class NewArticlePage < Calabash::IBase
 
 
     keyboard_enter_text(article[:body])
+
+    screenshot_embed(:label => 'New Article text')
+
     touch("button marked:'Done'")
     wait_for_animation
 

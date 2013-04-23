@@ -3,7 +3,7 @@ Given /^I am about to login$/ do
 
   welcome = page(WelcomePage).await
 
-  screenshot_embed(:label => "Login") unless @disable_screenshot
+  screenshot_embed(:label => 'Login') unless @disable_screenshot
 
   @page = welcome.wordpress_blog
 
@@ -49,6 +49,8 @@ Then /^I should be logged in$/ do
 
     raise "Was not logged in!"
   end
+
+  screenshot_embed(:label => "Logged in")
 
 end
 

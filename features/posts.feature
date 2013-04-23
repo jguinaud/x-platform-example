@@ -14,6 +14,9 @@ Feature: Posts
     And I post an article
     Then the article should be visible in the Posts screen
 
-
-
+#  @cancel_new_article
+#  Scenario: Canceling a new post should not publish it
+#    Given I'm on the New Post screen
+#    When I cancel the new post
+#    Then it should not be saved nor visible in Posts screen
 

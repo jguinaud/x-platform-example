@@ -25,3 +25,5 @@ Then /^the article should be visible in the Posts screen$/ do
 end
 
 #END:Create new posts
+
+

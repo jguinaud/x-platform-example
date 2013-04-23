@@ -8,7 +8,7 @@ class MainPage < Calabash::IBase
 
   def await(wait_opts={})
     super(wait_opts)
-    wait_for_elements_do_not_exist(["activityIndicatorView"], :timeout => 60)
+    wait_for_elements_do_not_exist(['activityIndicatorView'], :timeout => 60)
     wait_for_animation
     self
   end
@@ -51,8 +51,7 @@ class MainPage < Calabash::IBase
   def wait_for_article_to_appear(article)
     wait_for_elements_do_not_exist(["view marked:'Uploading'"])
 
-    wait_for_condition(:condition =>
-                           CALABASH_CONDITIONS[:no_network_indicator])
+    wait_for_no_network_indicator
 
     check_post_with_title_exists(article[:title])
 
@@ -78,7 +77,7 @@ class MainPage < Calabash::IBase
   def delete_top_article_if_matches(post)
     #post[:title]
     if element_exists(post_with_title(post[:title]))
-      swipe(:left, :query => post_with_title(post[:title]))
+      swipe(:right, :query => post_with_title(post[:title]))
     end
 
     delete_btn_q = "view marked:'Delete'"
