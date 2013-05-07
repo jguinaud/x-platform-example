@@ -39,7 +39,7 @@ end
 When /^I add the WordPress\.com blog$/ do
   @page = @page.wordpress_blog
 
-  @page = @page.login(USERS[:jonas])
+  @page = @page.login(USERS[:karl])
 end
 
 Then /^I should be logged in$/ do

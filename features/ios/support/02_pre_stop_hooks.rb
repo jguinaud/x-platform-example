@@ -4,7 +4,7 @@ if defined?(Calabash) && defined?(Calabash::Cucumber)
 
     def on_launch
       begin
-        wait_for_elements_exist(["alertView label text:'Update Available'"], :timeout => 2)
+        wait_for_elements_exist(["alertView label text:'Update Available'"], :timeout => 30)
         wait_for_animation
         touch("view marked:'Dismiss'")
       rescue

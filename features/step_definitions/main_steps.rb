@@ -12,7 +12,7 @@ When /^I can see the blog posts in the Posts screen$/ do
 
   @page.go_to_posts
 
-  @page.assert_posts(POSTS[:jonas][0..1])
+  @page.assert_posts(POSTS[:karl][0..1])
 
   screenshot_embed(:label => "Posts")
 

@@ -1,7 +1,7 @@
 POSTS = {
-    :jonas => [{
-                   :title => "Hello FOSDEM",
-                   :date => "February 1, 2013"
+    :karl => [{
+                   :title => "Hello X-Platform",
+                   :date => "May 7, 2013"
                }],
 
     :new => {
