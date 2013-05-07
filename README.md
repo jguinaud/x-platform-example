@@ -75,11 +75,16 @@ Run this xcode incantation to build:
 
 # Being Safe with Bundler
 
-While this step is not strictly required, we recommend that you use the bundler tool to manage Ruby gem dependencies.
+While this step is not strictly required, we recommend that you use the bundler tool to manage Ruby gem dependencies. 
+Bundler will ensure that you're always running an explicitly defined set of Ruby gem versions.
 
 Check that you have bundler installed by running `bundle version`. 
 
 If bundler is not installed run `gem install bundler` to install it.
+
+Now run 
+
+    `bundle install`    
 
 # Running the tests
 Plug in an Android phone (or for the patient, start an Android emulator).
