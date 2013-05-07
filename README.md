@@ -1,7 +1,16 @@
 x-platform-example
 ==================
 
-Example of cross-platform BDD with Cucumber and Calabash
+Example of cross-platform BDD with Cucumber and Calabash.
+
+There is a companion talk given at CukeUp'13:
+
+[Cross-platform for Mobile](http://skillsmatter.com/podcast/java-jee/cross-platform-and-end-to-end-bdd-for-mobile)
+
+
+And a companion Article which explains the idea:
+
+[Test Architecture for Cross-platform](https://github.com/calabash/calabash-ios/blob/0.9.x/calabash-cucumber/doc/x-platform-testing.md)
 
 
 Getting Started
@@ -43,7 +52,7 @@ Ensure you have XCode (4.5+) and XCode Command Line tools installed.
 
 Ensure you have Calabash iOS version 0.9.144 installed.
 
-From the root directory containing `android-source`,
+From the root directory (the one containing `android-source`),
 
     mkdir -p ios-source
     cd ios-source
@@ -56,22 +65,39 @@ Setup Calabash iOS
 
 Just select the default target (WordPress).
 
+Now open the WordPress XCode workspace: `open WordPress.xcworkspace`
+
 Run this xcode incantation to build:
 
     xcodebuild build -workspace WordPress.xcworkspace -scheme WordPress-cal -configuration Debug -sdk iphonesimulator6.1 DEPLOYMENT_LOCATION=YES DSTROOT=build TARGETED_DEVICE_FAMILY=1 
 
-If it complains about a missing WordPress-cal scheme then just create it from XCode and make sure you select the target: `WordPress-cal`.
+(If it complains about a missing WordPress-cal scheme then just create it from XCode and make sure you select the target: `WordPress-cal`.)
 
+# Being Safe with Bundler
+
+While this step is not strictly required, we recommend that you use the bundler tool to manage Ruby gem dependencies.
+
+Check that you have bundler installed by running `bundle version`. 
+
+If bundler is not installed run `gem install bundler` to install it.
 
 # Running the tests
 Plug in an Android phone (or for the patient, start an Android emulator).
 Run the login feature on Android phone:
 
-    calabash-android run android-source/2.2.7/bin/Dashboard-debug.apk -p android features/login.feature
+    bundle exec calabash-android run android-source/2.2.7/bin/Dashboard-debug.apk -p android features/login.feature
+
+You should see 
+
+    No test server found for this combination of app and calabash version. Recreating test server.
+    Done signing the test server. Moved it to test_servers/80b8b6c0a44b6e16d2bd7f4aeba0d2ac_0.4.4.apk
+    Using the android profile...
+    Feature: Login
+    ...
 
 Now run the login feature on iPhone:
 
-    cucumber -p ios features/login.feature
+    bundle exec cucumber -p ios features/login.feature
     
 Hopefully that works out well :)
 
