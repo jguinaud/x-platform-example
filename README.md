@@ -19,7 +19,7 @@ Ensure you ant and have Android API 13 installed.  To install API 13:
 
     $ANDROID_HOME/tools/android #now install android-13
 
-Ensure you have Calabash Android installed in version 0.4.0+.
+Ensure you have Calabash Android installed in version 0.4.4.
 
 Download and build
 
@@ -31,7 +31,8 @@ You should now have a directory: `2.2.7` containing the source code for Android.
 
 Finally build the `.apk` file
 
-     ant debug
+    cd 2.7.7
+    ant debug
 
 This should produce a file `bin/Dashboard-debug.apk`.
 
@@ -40,7 +41,7 @@ This should produce a file `bin/Dashboard-debug.apk`.
 
 Ensure you have XCode (4.5+) and XCode Command Line tools installed.
 
-Ensure you have Calabash iOS (0.9.132+) installed.
+Ensure you have Calabash iOS version 0.9.144 installed.
 
 From the root directory containing `android-source`,
 
