@@ -5,7 +5,7 @@ Feature: Posts
     And the menu is visible
 
   Scenario: Blog available
-    Then I should see the "calabashtraining" blog
+    Then I should see the "xcalabash" blog
     And I can see the blog posts in the Posts screen
 
   @new_article
