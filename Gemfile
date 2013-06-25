@@ -1,3 +1,3 @@
 source 'http://rubygems.org'
-gem 'calabash-android', '0.4.4'
-gem 'calabash-cucumber', '0.9.148'
+gem 'calabash-android', '0.4.7.pre7'
+gem 'calabash-cucumber', '0.9.150'
