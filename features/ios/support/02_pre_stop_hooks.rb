@@ -1,4 +1,5 @@
 if defined?(Calabash) && defined?(Calabash::Cucumber)
+  require 'calabash-cucumber/operations'
   class CallbackWorld
     include ::Calabash::Cucumber::Operations
 
