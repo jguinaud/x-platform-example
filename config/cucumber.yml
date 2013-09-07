@@ -5,6 +5,6 @@ android: PLATFORM=android -r features/support -r features/android/support -r fea
 
 android_login: PLATFORM=android -r features/support -r features/android/support -r features/android/helpers -r features/step_definitions -r features/android/pages/ --tags @add_blog
 
-ios: DEVICE_TARGET=simulator APP_BUNDLE_PATH=ios-source/3.3.1/build/Applications/WordPress.app PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages
+ios: APP_BUNDLE_PATH=ios-source/3.3.1/build/Applications/WordPress.app PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages
 
-ios_invalid_login: DEVICE_TARGET=simulator PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages --tags @invalid_login
+ios_invalid_login: PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages --tags @invalid_login
