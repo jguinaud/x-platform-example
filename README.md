@@ -18,7 +18,7 @@ Getting Started
 
 The example uses the open source WordPress apps for iOS and Android. Since the Android app is licensed as GPL, we do not distribute the app with this project.
 
-You can download the apps by doing the following. 
+You can download the apps by doing the following.
 
 First ensure subversion is installed by typing `svn --version` in a command prompt.
 
@@ -69,22 +69,24 @@ Now open the WordPress XCode workspace: `open WordPress.xcworkspace`
 
 Run this xcode incantation to build:
 
-    xcodebuild build -workspace WordPress.xcworkspace -scheme WordPress-cal -configuration Debug -sdk iphonesimulator6.1 DEPLOYMENT_LOCATION=YES DSTROOT=build TARGETED_DEVICE_FAMILY=1 
+    xcodebuild build -workspace WordPress.xcworkspace -scheme WordPress-cal -configuration Debug -sdk iphonesimulator6.1 DEPLOYMENT_LOCATION=YES DSTROOT=build TARGETED_DEVICE_FAMILY=1
 
-(If it complains about a missing WordPress-cal scheme then just create it from XCode and make sure you select the target: `WordPress-cal`.)
+If you're running XCode 5, replace `-sdk iphonesimulator6.1` with `-sdk iphonesimulator7.0`.
+
+If it complains about a missing WordPress-cal scheme then just create it from XCode and make sure you select the target: `WordPress-cal`.
 
 # Being Safe with Bundler
 
-While this step is not strictly required, we recommend that you use the bundler tool to manage Ruby gem dependencies. 
+While this step is not strictly required, we recommend that you use the bundler tool to manage Ruby gem dependencies.
 Bundler will ensure that you're always running an explicitly defined set of Ruby gem versions.
 
-Check that you have bundler installed by running `bundle version`. 
+Check that you have bundler installed by running `bundle version`.
 
 If bundler is not installed run `gem install bundler` to install it.
 
-Now run 
+Now run
 
-    `bundle install`    
+    `bundle install`
 
 # Running the tests
 Plug in an Android phone (or for the patient, start an Android emulator).
@@ -92,7 +94,7 @@ Run the login feature on Android phone:
 
     bundle exec calabash-android run android-source/2.2.7/bin/Dashboard-debug.apk -p android features/login.feature
 
-You should see 
+You should see
 
     No test server found for this combination of app and calabash version. Recreating test server.
     Done signing the test server. Moved it to test_servers/80b8b6c0a44b6e16d2bd7f4aeba0d2ac_0.4.4.apk
@@ -103,6 +105,5 @@ You should see
 Now run the login feature on iPhone:
 
     bundle exec cucumber -p ios features/login.feature
-    
-Hopefully that works out well :)
 
+Hopefully that works out well :)

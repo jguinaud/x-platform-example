@@ -1,12 +1,10 @@
 ## Invalid login ##
 Given /^I am about to login$/ do
-
   welcome = page(WelcomePage).await
 
   screenshot_embed(:label => 'Login') unless @disable_screenshot
 
   @page = welcome.wordpress_blog
-
 
 end
 

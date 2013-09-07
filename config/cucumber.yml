@@ -1,10 +1,10 @@
 # config/cucumber.yml
 ##YAML Template
 ---
-android: RESET_BETWEEN_SCENARIOS=1 PLATFORM=android -r features/support -r features/android/support -r features/android/helpers -r features/step_definitions -r features/android/pages/
+android: PLATFORM=android -r features/support -r features/android/support -r features/android/helpers -r features/step_definitions -r features/android/pages/
 
-android_login: RESET_BETWEEN_SCENARIOS=1 PLATFORM=android -r features/support -r features/android/support -r features/android/helpers -r features/step_definitions -r features/android/pages/ --tags @add_blog
+android_login: PLATFORM=android -r features/support -r features/android/support -r features/android/helpers -r features/step_definitions -r features/android/pages/ --tags @add_blog
 
-ios: APP_BUNDLE_PATH=ios-source/3.3.1/build/Applications/WordPress.app PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages
+ios: DEVICE_TARGET=simulator APP_BUNDLE_PATH=ios-source/3.3.1/build/Applications/WordPress.app PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages
 
-ios_invalid_login: RESET_BETWEEN_SCENARIOS=1 PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages --tags @invalid_login
+ios_invalid_login: DEVICE_TARGET=simulator PLATFORM=ios -r features/support -r features/ios/support -r features/ios/helpers -r features/step_definitions -r features/ios/pages --tags @invalid_login
