@@ -86,7 +86,7 @@ If bundler is not installed run `gem install bundler` to install it.
 
 Now run
 
-    `bundle install`
+    bundle install
 
 # Running the tests
 Plug in an Android phone (or for the patient, start an Android emulator).
