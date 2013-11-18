@@ -3,7 +3,7 @@ Feature: Login
   I'll provide email and password. I'll see appropriate error messages
   if I enter a bad username and password combination.
 
-  @invalid_login
+  @invalid_login @reinstall
   Scenario: Invalid login to WordPress.com blog
     Given I am about to login
     When I enter invalid credentials

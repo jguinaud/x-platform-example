@@ -65,20 +65,13 @@ def login_from_welcome_screen
 end
 
 Given /^I am logged in$/ do
-
-  @disable_screenshot = true
-
-  login_from_welcome_screen
-
-  @disable_screenshot = false
-
+  unless logged_in?
+    login_from_welcome_screen
+  end
+  @page = page(MainPage).await
 end
 
 
-#
-#Then /^I should go to the recommended page$/ do
-#  page(RecommendedPage).await(:timeout => 15)
-#end
 When /^the menu is visible$/ do
   @page.show_menu
   screenshot_embed(:label => "Menu") unless @disable_screenshot

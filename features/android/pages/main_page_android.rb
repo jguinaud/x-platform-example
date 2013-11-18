@@ -3,7 +3,7 @@ require 'calabash-android/abase'
 class MainPage < Calabash::ABase
 
   def trait
-    "org.wordpress.android.util.WPTitleBar"
+    'org.wordpress.android.util.WPTitleBar'
   end
 
   def await
@@ -37,14 +37,14 @@ class MainPage < Calabash::ABase
              :retry_frequency => 1,
              :timeout_message => "Timed out waiting (120s) for 'Posts' screen") do
 
-      headers = query("ListView LinearLayout index:0 TextView",:text)
+      headers = query('ListView LinearLayout index:0 TextView',:text)
 
-      headers.include?"Posts" || element_exists("DialogText")
+      headers.include?('Posts') || element_exists('DialogText')
     end
   end
 
   def go_to_new_article
-    @world.pending
+
   end
 
   def wait_for_article_to_appear(article)
