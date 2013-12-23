@@ -69,9 +69,8 @@ Now open the WordPress XCode workspace: `open WordPress.xcworkspace`
 
 Run this xcode incantation to build:
 
-    xcodebuild build -workspace WordPress.xcworkspace -scheme WordPress-cal -configuration Debug -sdk iphonesimulator6.1 DEPLOYMENT_LOCATION=YES DSTROOT=build TARGETED_DEVICE_FAMILY=1
+    xcodebuild build -workspace WordPress.xcworkspace -scheme WordPress-cal -configuration Debug -sdk iphonesimulator7.0 DEPLOYMENT_LOCATION=YES DSTROOT=build TARGETED_DEVICE_FAMILY=1
 
-If you're running XCode 5, replace `-sdk iphonesimulator6.1` with `-sdk iphonesimulator7.0`.
 
 If it complains about a missing WordPress-cal scheme then just create it from XCode and make sure you select the target: `WordPress-cal`.
 
