@@ -1,7 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    CFPropertyList (2.2.4)
+    CFPropertyList (2.2.6)
     awesome_print (1.2.0)
     blankslate (2.1.2.4)
     builder (3.2.2)
@@ -17,7 +17,7 @@ GEM
       xamarin-test-cloud (>= 0.9.23)
     calabash-common (0.0.1)
       cucumber (~> 1.3.0)
-    calabash-cucumber (0.9.163.pre7)
+    calabash-cucumber (0.9.163.pre11)
       CFPropertyList
       awesome_print
       bundler (~> 1.1)
@@ -27,7 +27,7 @@ GEM
       geocoder (~> 1.1.8)
       httpclient (~> 2.3.3)
       json
-      run_loop (~> 0.1.0.pre5)
+      run_loop (~> 0.1.0.pre8)
       sim_launcher (= 0.4.6)
       slowhandcuke
       xamarin-test-cloud (~> 0.9.25)
@@ -41,7 +41,7 @@ GEM
     edn (1.0.2)
       parslet (~> 1.4.0)
     escape (0.0.4)
-    geocoder (1.1.8)
+    geocoder (1.1.9)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     httpclient (2.3.4.1)
@@ -58,7 +58,7 @@ GEM
       mime-types (>= 1.16)
     retriable (1.3.3.1)
     rubyzip (0.9.9)
-    run_loop (0.1.0.pre5)
+    run_loop (0.1.0.pre9)
       json
       thor
     sim_launcher (0.4.6)
@@ -84,4 +84,4 @@ PLATFORMS
 
 DEPENDENCIES
   calabash-android (= 0.4.16)
-  calabash-cucumber (= 0.9.163.pre7)
+  calabash-cucumber (= 0.9.163.pre11)
